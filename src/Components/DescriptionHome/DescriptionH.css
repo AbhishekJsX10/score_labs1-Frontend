@@ -1,0 +1,152 @@
+.description-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.description-content {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  z-index: 1;
+}
+
+.description-text {
+  flex: 1;
+}
+
+.description-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.description-subtitle {
+  font-size: 1rem;
+  color: rgba(32, 32, 32, 0.8);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.description-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.description-image img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.join-button {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  color: #fff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.join-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Mobile and Tablet styles */
+.mobile-description {
+  display: none;
+  text-align: center;
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mobile-description .description-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.mobile-description .description-subtitle {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.mobile-description .description-image {
+  margin: 2rem 0;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1024px) {
+  .description-container {
+    min-height: auto;
+    padding: 4rem 2rem;
+  }
+  
+  .description-content {
+    display: none;
+  }
+
+  .mobile-description {
+    display: block;
+  }
+
+  .mobile-description .description-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .mobile-description .description-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mobile-description .description-image {
+    margin: 2.5rem 0;
+  }
+
+  .mobile-description .description-image img {
+    max-width: 80%;
+    height: auto;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .description-container {
+    padding: 3rem 1rem;
+  }
+
+  .mobile-description .description-title {
+    font-size: 1.6rem;
+  }
+
+  .mobile-description .description-image {
+    margin: 2rem 0;
+  }
+
+  .mobile-description .description-image img {
+    max-width: 90%;
+  }
+}

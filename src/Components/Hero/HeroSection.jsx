@@ -2,24 +2,29 @@ import React, { useState } from 'react'
 import './HeroSection.css'
 import heroBg from '../../assets/hero-white.webp'
 import { LuPhoneCall } from "react-icons/lu";
-import PhoneModal from '../PhoneModal/PhoneModal';
+import ContactModal from '../ContactModal/ContactModal';
 
 const HeroSection = ({ title, description, buttonText }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    setIsModalOpen(true);
+  };
 
   return (
     <>
       <div className="hero-container">
         <div className="hero-wrapper">
-          <div className="hero-content">
+          <div className="hero-content mt-8">
             <h1 className="hero-title leading-tight">{title}</h1>
             <p className="hero-description leading-0">{description}</p>
             <button 
               className="hero-button flex items-center gap-4"
-              onClick={() => setIsModalOpen(true)}
+              onClick={handleContactClick}
             >
               <span className="call-icon"><LuPhoneCall /></span>
-              Call Now
+              Get In Touch
             </button>
           </div>
           <div className="hero-image" style={{
@@ -31,7 +36,7 @@ const HeroSection = ({ title, description, buttonText }) => {
         </div>
       </div>
 
-      <PhoneModal 
+      <ContactModal 
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />

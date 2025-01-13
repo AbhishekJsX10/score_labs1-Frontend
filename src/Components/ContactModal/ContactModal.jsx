@@ -129,7 +129,7 @@ const ContactModal = ({ isOpen, onClose }) => {
   return (
     <div className="modal-overlay" onClick={handleOverlayClick}>
       <div className="modal-content">
-        <h2 className="modal-title">Contact Us</h2>
+        <h2 className="modal-title">Get In Touch</h2>
         <p className="modal-subtitle">We'd love to hear from you!</p>
         
         <form onSubmit={handleSubmit} className="contact-form">

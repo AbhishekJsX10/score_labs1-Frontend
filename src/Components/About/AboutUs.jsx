@@ -1,42 +1,42 @@
 import React, { useState, useEffect, useRef } from 'react'
 import './AboutUs.css'
+import FounderModal from './FounderModal'
 
 const founders = [
   {
     id: 1,
-    name: 'Ripan Das',
-    role: 'Expert in generative AI and chip design',
-    image: '/founders/ripan.jpg'
+    name: 'Chanika Angchaikulkit',
+    role: 'Co-Founder and COO',
+    image: '/founders/chanika.jpg',
+    description: "Operations Executive, Fortune 50, 22+yrs GA Tech Alum An accomplished operations executive with over 22 years of experience managing global-scale initiatives at Fortune 50 companies. Chanika specializes in operational excellence, strategic planning, and scaling businesses. Her background includes leading diverse teams, optimizing workflows, and executing transformational projects that drive organizational growth. Her operational acumen ensures Score Labs delivers on its ambitious goals effectively and efficiently"
   },
   {
     id: 2,
-    name: 'Sudeep Suman',
-    role: 'Strategic leader in disruptive technology',
-    image: '/founders/sudeep.jpg'
+    name: 'Himanshu Singh',
+    role: 'CEO of Score Labs',
+    image: '/founders/himanshu.jpg',
+    description: "Entrepreneur, Ex-Management Consultant, Engineer, Researcher, 15+ years Himanshu Singh is an accomplished entrepreneur and deep-tech strategist with expertise in AI-driven transformations, go-to-market strategies, and operational excellence. As co-founder of iSMRITI, he built a global tech consulting firm, leading transformative projects across 13 countries, including predictive maintenance systems and large-scale public health initiatives. A former Management Consultant at McKinsey & Company, Himanshu has delivered multi-billion-dollar strategies for Fortune 500 companies, spanning pricing transformations, procurement optimization, and supply chain innovation. An alumnus of IIT Kanpur, he holds a PhD in Biomedical Engineering from the National University of Singapore, where his pioneering research advanced malaria vaccine development. His career includes impactful roles with Rolls-Royce in Singapore and global technology leadership, solidifying his reputation as a visionary leader in deep-tech innovation"
   },
   {
     id: 3,
-    name: 'Chanika Angchaikulkit',
-    role: 'Proven entrepreneur and innovation driver',
-    image: '/founders/chanika.jpg'
+    name: 'Sudeep Suman',
+    role: 'Co-Founder and Investor',
+    image: '/founders/sudeep.jpg',
+    description: "Partner & Managing Director, AlixPartners, 24+ yrs Indian Institute of Technology Kanpur Alum A seasoned strategist with 24+ years of experience in strategy, operations, and financial management. Sudeep is a Partner and Managing Director at AlixPartners, where he has advised global corporations on transformative growth initiatives and operational efficiency. His expertise in technology-driven innovation and business transformation provides invaluable guidance to Score Labs’ strategic initiatives."
   },
   {
     id: 4,
-    name: 'Sandeep Suman',
-    role: 'Head of India Division',
-    image: '/founders/sandeep.jpg'
+    name: 'Ripan Das',
+    role: 'Co-Founder and CTO',
+    image: '/founders/ripan.jpg',
+    description: "Chip Design, Principal Architect, Intel, 23+yrs Indian Institute of Technology Kanpur Alum A distinguished technologist with over 23 years of experience in hardware and software innovation, Ripan is a thought leader in generative AI open-source development, holding multiple chip design patents. As a former Principal Architect at Intel, he played a pivotal role in developing cutting-edge AI solutions and optimizing performance for enterprise-grade hardware systems. His deep expertise in AI and hardware-software integration anchors Score Labs’ technical vision."
   },
   {
     id: 5,
-    name: 'Himanshu Singh',
-    role: 'CEO of Score Labs',
-    image: '/founders/himanshu.jpg'
-  },
-  {
-    id: 6,
-    name: 'Brent Herd',
-    role: 'Head, Business Development & Investor Relations',
-    image: '/founders/brent.jpg'
+    name: 'Sandeep Suman',
+    role: 'Head of India Division',
+    image: '/founders/sandeep.jpg',
+    description: "An IIT graduate with over 20 years of expertise in data center infrastructure and energy optimization, Sandeep leads SCORE Labs' operations in India. With a Master's in Project Management and a strong focus on customer acquisition, he plays a pivotal role in driving growth, implementing innovative infrastructure solutions, and establishing SCORE Labs as a leader in the Indian market."
   }
 ]
 
@@ -44,6 +44,8 @@ const AboutUs = () => {
   const [activeFounder, setActiveFounder] = useState(founders[0])
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selectedFounder, setSelectedFounder] = useState(null)
   const intervalRef = useRef(null)
 
   const nextSlide = () => {
@@ -74,6 +76,11 @@ const AboutUs = () => {
       clearInterval(intervalRef.current)
     }
     setTimeout(() => setIsPaused(false), 3000)
+  }
+
+  const handleFounderClick = (founder) => {
+    setSelectedFounder(founder)
+    setIsModalOpen(true)
   }
 
   const handlePrevSlide = () => {
@@ -112,7 +119,10 @@ const AboutUs = () => {
               <div
                 key={founder.id}
                 className={`founder-item ${activeFounder.id === founder.id ? 'active' : ''}`}
-                onClick={() => handleSlideClick(founders.indexOf(founder))}
+                onClick={() => {
+                  handleSlideClick(founders.indexOf(founder));
+                  handleFounderClick(founder);
+                }}
               >
                 <img 
                   src={founder.image} 
@@ -140,6 +150,7 @@ const AboutUs = () => {
               <div 
                 key={founder.id} 
                 className={`carousel-slide ${currentSlide === index ? 'active' : ''}`}
+                onClick={() => handleFounderClick(founder)}
               >
                 <img 
                   src={founder.image} 
@@ -157,7 +168,10 @@ const AboutUs = () => {
             <div
               key={founder.id}
               className={`carousel-nav-item ${currentSlide === index ? 'active' : ''}`}
-              onClick={() => handleSlideClick(index)}
+              onClick={() => {
+                handleSlideClick(index);
+                handleFounderClick(founder);
+              }}
             >
               <img 
                 src={founder.image} 
@@ -169,6 +183,13 @@ const AboutUs = () => {
           ))}
         </div>
       </div>
+
+      {/* Founder Modal */}
+      <FounderModal
+        founder={selectedFounder}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   )
 }

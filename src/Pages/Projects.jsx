@@ -7,7 +7,7 @@ import FeaturedServices from '../Components/FeaturedServices/FeaturedServices'
 const Projects = () => {
   return (
     <>
-    <HeroSection title="Together We Advance" description="Pushingthe limits of innovation to tackle some of the world's toughest challenges with our partners" buttonText="Call Now"/>
+    <HeroSection title="Services" description="At Score Labs, we are dedicated to democratizing artificial intelligence by providing innovative, cost-efficient solutions that make AI accessible to businesses of all sizes." buttonText="Get In Touch"/>
     <CardsCarousel/>
     <FeaturedSolutions />
     <FeaturedServices/>

@@ -8,24 +8,24 @@ const FeaturedServices = () => {
   const services = [
     {
       id: 1,
-      title: 'Unlock the Magical Experience of AI',
+      title: 'AI Production Solutions',
       image: card1Image,
       description: 'Score Labs AI solutions are designed to grow and adapt with your business.',
-      buttonText: 'Find Retailers',
+      buttonText: 'Explore More',
     },
     {
       id: 2,
-      title: 'Unlock the Magical Experience of AI',
+      title: 'AI Fine-Tuning Services',
       image: card2Image,
       description: 'Score Labs AI solutions are designed to grow and adapt with your business.',
-      buttonText: 'Find Retailers',
+      buttonText: 'Explore More',
     },
     {
       id: 3,
-      title: 'Unlock the Magical Experience of AI',
+      title: 'Scalable AI Integration',
       image: card3Image,
       description: 'Score Labs AI solutions are designed to grow and adapt with your business.',
-      buttonText: 'Find Retailers',
+      buttonText: 'Explore More',
     },
   ];
 

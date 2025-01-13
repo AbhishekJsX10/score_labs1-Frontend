@@ -9,28 +9,28 @@ import card3Image from '../../assets/IntroductionImage.webp';
 const CardsCarousel = () => {
   const cards = [
     {
-      title: 'AI-Powered Business Solutions',
-      description: 'Transform your operations with our cutting-edge AI integration services. Enhance efficiency and decision-making through intelligent automation.',
+      title: 'AI Production Solutions',
+      description: 'Advanced alternatives to traditional GPUs for AI production inferencing tasks, delivering high performance with reduced resource consumption. Our solutions are designed to integrate seamlessly into your existing systems, ensuring efficient and scalable AI deployment.',
       image: card1Image
     },
     {
-      title: 'Custom AI Development',
-      description: 'Get tailored AI solutions designed specifically for your business needs. Our expert team develops scalable and efficient AI systems.',
+      title: 'AI Fine-Tuning Services',
+      description: 'Our AI fine-tuning services enable businesses to customize AI models to meet their specific needs. By tailoring models to your unique requirements, we help you achieve optimal performance and accuracy in your AI applications.',
       image: card2Image
     },
     {
-      title: 'AI Consultation Services',
-      description: 'Leverage our expertise in AI strategy and implementation. We help businesses navigate the AI landscape and maximize their potential.',
+      title: 'Scalable AI Integration',
+      description: 'We provide solutions built for performance, scalability, and adaptability, allowing your AI capabilities to grow alongside your business. Our future-ready approach ensures seamless expansion opportunities, empowering you to drive innovation and enhance efficiency.',
       image: card3Image
     },
     {
-      title: 'Machine Learning Integration',
-      description: 'Implement advanced machine learning models that evolve with your business. Unlock insights and patterns in your data.',
+      title: 'Sustainable AI Deployment',
+      description: 'At Score Labs, we prioritize sustainability in our AI solutions. Our energy-conscious technologies not only reduce operational costs but also contribute to a greener approach to AI deployment, aligning with modern environmental challenges.',
       image: card1Image
     },
     {
-      title: 'AI Performance Optimization',
-      description: 'Enhance your existing AI systems with our optimization services. Improve speed, accuracy, and resource efficiency.',
+      title: 'Flexible Integration Services',
+      description: 'Our AI solutions are designed for flexible integration, fitting effortlessly into your existing infrastructure. Whether you operate in the cloud or on-premises, we ensure a smooth transition and minimal disruption to your operations.',
       image: card2Image
     }
   ];
@@ -80,25 +80,25 @@ const CardsCarousel = () => {
           <Slider {...settings} className="cards-slider">
             {cards.map((card, index) => (
               <div key={index} className="px-3 pb-8">
-                <div className="bg-white rounded-lg overflow-hidden shadow-2xl h-[500px] flex flex-col">
+                <div className="bg-white rounded-lg overflow-hidden shadow-2xl h-[600px] md:h-[500px] flex flex-col">
                   {/* Image Section - 40% height */}
-                  <div className="relative h-[200px] w-full bg-gray-50 flex items-center justify-center">
+                  <div className="relative h-[240px] md:h-[200px] w-full bg-gray-50 flex items-center justify-center">
                     <img
                       src={card.image}
                       alt={card.title}
-                      className="w-40 h-40 object-contain"
+                      className="w-48 h-48 md:w-40 md:h-40 object-contain"
                     />
                   </div>
                   
                   {/* Content Section - 60% height */}
-                  <div className="flex flex-col justify-between flex-grow p-6">
+                  <div className="flex flex-col justify-between flex-grow p-6 md:p-6">
                     <div>
                       <h3 className="text-2xl font-bold text-black mb-4">{card.title}</h3>
                       <p className="text-gray-600 text-[1.1rem] leading-relaxed">
                         {card.description}
                       </p>
                     </div>
-                    <button className="bg-black hover:bg-gray-800 text-white px-8 py-2.5 rounded-full text-sm font-medium transition-all duration-300 mt-4">
+                    <button className="bg-black hover:bg-gray-800 text-white px-8 py-3 md:py-2.5 rounded-full text-sm font-medium transition-all duration-300 mt-6 md:mt-4">
                       Explore More
                     </button>
                   </div>

@@ -1,0 +1,107 @@
+.founder-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.founder-modal-content {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.founder-modal-close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+  padding: 0.5rem;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.founder-modal-close:hover {
+  color: #333;
+}
+
+.founder-modal-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.founder-modal-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.founder-modal-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.founder-modal-name {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.founder-modal-role {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 0;
+}
+
+.founder-modal-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .founder-modal-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .founder-modal-image img {
+    max-height: 300px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .founder-modal-content {
+    padding: 1.5rem;
+  }
+
+  .founder-modal-name {
+    font-size: 1.5rem;
+  }
+
+  .founder-modal-role {
+    font-size: 1rem;
+  }
+}

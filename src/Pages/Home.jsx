@@ -10,15 +10,15 @@ const Home = () => {
   return (
     <>
       <HeroSection
-        title="Score Labs AI"
-        description="DISRUPTIVE TECHNOLOGIES TO DEMOCRATIZE AI"
-        buttonText="Call Now"
+        title="Score Labs "
+        description="At Score Labs, we are dedicated to democratizing artificial intelligence by providing innovative, cost-efficient solutions that make AI accessible to businesses of all sizes. "
+        buttonText="Get In Touch"
       />
       <Introduction />
       <AboutUs />
       <DescriptionH/>
       <Products/>
-      <ReviewSection/>
+      {/* <ReviewSection/> */}
     </>
   )
 }

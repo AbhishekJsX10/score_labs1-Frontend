@@ -24,26 +24,28 @@ const Navbar = () => {
       <nav className="navbar">
         <div className="navbar-logo flex items-center gap-4">
           <img src={logo} className='h-10 w-10 object-cover object-bottom' alt="" />
-          <span className="text-[1rem]">Score Labs AI</span>
+          <span className="text-[1rem]">Score Labs</span>
         </div>
         
         <div className="desktop-menu">
           <div className="navbar-center">
             <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link>
-            <Link to="/projects" className={location.pathname === '/projects' ? 'active' : ''}>Projects</Link>
+            <Link to="/services" className={location.pathname === '/services' ? 'active' : ''}>Services</Link>
           </div>
 
           <div className="navbar-right">
-            <Link onClick={handleContactClick} className={location.pathname === '/contact' ? 'active' : ''}>Contact Us</Link>
-            <Link to="/about-us" className={location.pathname === '/about-us' ? 'active' : ''}>About US</Link>
+            <Link onClick={handleContactClick}>Get in Touch</Link>
+            <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>Contact Us</Link>
+            <Link to="/about-us" className={location.pathname === '/about-us' ? 'active' : ''}>About Us</Link>
           </div>
         </div>
 
         <div className={`mobile-menu ${isOpen ? 'active' : ''}`}>
           <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link>
-          <Link to="/projects" className={location.pathname === '/projects' ? 'active' : ''}>Projects</Link>
-          <Link onClick={handleContactClick} className={location.pathname === '/contact' ? 'active' : ''}>Contact Us</Link>
-          <Link to="/about-us" className={location.pathname === '/about-us' ? 'active' : ''}>About US</Link>
+          <Link to="/services" className={location.pathname === '/services' ? 'active' : ''}>Services</Link>
+          <Link onClick={handleContactClick}>Get in Touch</Link>
+          <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>Contact Us</Link>
+          <Link to="/about-us" className={location.pathname === '/about-us' ? 'active' : ''}>About Us</Link>
         </div>
 
         <div className="hamburger" onClick={toggleMenu}>
